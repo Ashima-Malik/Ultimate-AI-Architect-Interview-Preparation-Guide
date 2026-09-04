@@ -1,8 +1,5 @@
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
----
-
-# NLP for AI/ML Product Managers — The Complete Guide
+# NLP — The Complete Guide
 
 ### Everything you need to walk into an interview confident
 
@@ -18,8 +15,6 @@ This guide moves from **simple → complex**, exactly the way an interviewer wil
 - Where it's used in real products
 
 ---
-
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -87,7 +82,6 @@ Lemmatisation = smart root: "running" → "run" (always a real word)
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -259,7 +253,6 @@ BERT/GPT   → contextual meaning, different vector per context ← state of the
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -358,7 +351,7 @@ GRU:  Update Gate + Reset Gate                             (2 components)
 - LSTM is often better for very long sequences
 - In practice, results are similar enough that GRU is preferred when speed matters
 
-**The honest truth for PMs:** Both LSTM and GRU have been largely replaced by Transformers for most NLP tasks. But they still appear in:
+**The honest truth:** Both LSTM and GRU have been largely replaced by Transformers for most NLP tasks. But they still appear in:
 - Time-series prediction (stock prices, user activity)
 - Streaming scenarios where you must process one token at a time
 - Edge/mobile deployments where Transformers are too heavy
@@ -407,7 +400,6 @@ Output: "Le  chat  s'est  assis..."
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -557,11 +549,10 @@ Standard attention requires loading Q, K, V matrices into slow GPU memory repeat
 
 Flash Attention (2022) restructures the computation to stay in fast GPU cache — producing the exact same mathematical result, just 2–4× faster with much less memory.
 
-**Why PMs should know this:** Flash Attention is why modern LLMs can handle 100K+ token context windows efficiently. Without it, GPT-4 handling a 128K context would be impractically slow.
+**Why you should know this:** Flash Attention is why modern LLMs can handle 100K+ token context windows efficiently. Without it, GPT-4 handling a 128K context would be impractically slow.
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -650,7 +641,6 @@ It creates a smooth, continuous representation. Every position gets a unique pat
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -790,8 +780,6 @@ One unified model handles all tasks. Just prefix the input with the task name.
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
-
 ---
 
 # PART 7: CNN FOR NLP + FINE-TUNING + RLHF
@@ -896,7 +884,7 @@ Prompt → LLM generates response → Reward Model scores it → PPO updates LLM
 
 ## RAG — Retrieval-Augmented Generation
 
-Not a training technique — an inference technique. But PMs need to know it.
+Not a training technique — an inference technique. But you need to know it.
 
 **Problem:** LLMs hallucinate. They can't access real-time information. They have a knowledge cutoff.
 
@@ -918,8 +906,6 @@ User gets: factual, cited answer instead of hallucination
 **Where used:** Enterprise chatbots, internal knowledge bases, customer support AI, LinkedIn's Help Center.
 
 ---
-
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -1023,11 +1009,9 @@ MRR = (0.5 + 1.0) / 2 = 0.75
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
-
 ---
 
-# PART 9: NLP IN PRACTICE — PM SCENARIOS
+# PART 9: NLP IN PRACTICE 
 
 ---
 
@@ -1043,7 +1027,7 @@ MRR = (0.5 + 1.0) / 2 = 0.75
 
 4. Personalisation: User's profile, skills, and past behaviour modulate the final ranking.
 
-**PM decision point:** Dual encoder (fast, approximate) vs cross-encoder (slow, precise). You can't run a cross-encoder on all 50 million jobs. So you use dual encoder to get to 500, then cross-encoder to rank those 500. This is the retrieve-then-rerank pattern.
+**Decision point:** Dual encoder (fast, approximate) vs cross-encoder (slow, precise). You can't run a cross-encoder on all 50 million jobs. So you use dual encoder to get to 500, then cross-encoder to rank those 500. This is the retrieve-then-rerank pattern.
 
 ---
 
@@ -1057,7 +1041,7 @@ MRR = (0.5 + 1.0) / 2 = 0.75
 2. Confidence threshold: posts above 0.9 confidence are auto-approved or auto-rejected. Posts between 0.6–0.9 go to human review.
 3. Continual learning: human review decisions feed back as new training data.
 
-**PM decision point:** Where to set the threshold. Low threshold → more automation, higher false positives (good content rejected). High threshold → less automation, more human review cost. This is a business decision that must balance quality, cost, and creator experience.
+**Decision point:** Where to set the threshold. Low threshold → more automation, higher false positives (good content rejected). High threshold → less automation, more human review cost. This is a business decision that must balance quality, cost, and creator experience.
 
 ---
 
@@ -1069,11 +1053,11 @@ MRR = (0.5 + 1.0) / 2 = 0.75
 
 **RAG component:** Inject user's profile (skills, job, industry) and trending topics into context to personalise suggestions.
 
-**PM metric:** Not BLEU — human preference rate. A/B test: do users who see AI suggestions post more, and do those posts get more engagement?
+**Metric:** Not BLEU — human preference rate. A/B test: do users who see AI suggestions post more, and do those posts get more engagement?
 
 ---
 
-## The PM's Mental Model for NLP Decisions
+## Mental Model for NLP Decisions
 
 ```
 CHOOSING THE RIGHT MODEL:
@@ -1099,7 +1083,6 @@ Do you want the model to follow instructions safely?
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -1185,4 +1168,3 @@ Pre-training on text makes a model good at predicting next words — but not nec
 
 ---
 
-*This guide covers the complete NLP stack an AI/ML PM needs — from tokenisation to LLMs to evaluation metrics.*

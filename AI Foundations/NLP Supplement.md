@@ -1,8 +1,5 @@
-<p align="right"><strong>AI PM INSIDER</strong></p>
-
 ---
-
-# NLP for AI PMs — Deep Dive Supplement
+# NLP — Deep Dive Supplement
 
 ### Everything that needs a simple example, worked through step by step
 
@@ -10,7 +7,6 @@
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -247,15 +243,10 @@ If "LinkedIn" was never seen, but "link", "linked", and "In" were — the model 
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
-
 ---
 
 # PART 2: ALL ATTENTION MECHANISMS
 
-![All Attention Mechanisms](diagrams/03_all_attention.svg)
-
----
 
 ## The Problem That Attention Solved
 
@@ -544,11 +535,10 @@ GQA:      32 Q heads, but only 8 K/V groups → 32×128 + 8×128 + 8×128 = 6,14
                                                ← half the KV cache!
 ```
 
-**Why PMs care:** The KV cache (storing past keys and values during generation) is the main memory bottleneck when serving LLMs. GQA halves it → you can serve twice as many users simultaneously with the same hardware.
+**Why to care:** The KV cache (storing past keys and values during generation) is the main memory bottleneck when serving LLMs. GQA halves it → you can serve twice as many users simultaneously with the same hardware.
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -618,7 +608,7 @@ If you raise the threshold (call FEWER posts HQ):
 → Precision goes UP (what you do flag is almost certainly HQ)
 → Recall goes DOWN (you miss more real HQ posts)
 
-**The PM decision:**
+**The Decision:**
 For a quality feed: care more about Precision (don't promote bad content) than Recall.
 For fraud detection: care more about Recall (catch every fraud, accept some false alarms).
 
@@ -738,7 +728,7 @@ Model B (better model, more training):
 
 Model B has lower perplexity → less surprised by the text → better language model.
 
-**PM intuition:** If GPT-4 has perplexity of 5.4 and LLaMA-7B has perplexity of 12.1 on the same benchmark, GPT-4 has a much better internal model of language. But perplexity doesn't tell you which is more helpful — that needs human evaluation.
+**Intuition:** If GPT-4 has perplexity of 5.4 and LLaMA-7B has perplexity of 12.1 on the same benchmark, GPT-4 has a much better internal model of language. But perplexity doesn't tell you which is more helpful — that needs human evaluation.
 
 ---
 
@@ -774,7 +764,7 @@ Score of 0.812 means: our ranking is 81.2% as good as the perfect ranking.
 
 We lost points by putting a score-0 result at position 2 instead of the score-2 result.
 
-**PM decision:** Is NDCG@5 = 0.81 good enough to ship? Compare to baseline (old search = 0.74). That's a 9.5% relative improvement — probably worth shipping.
+**Decision:** Is NDCG@5 = 0.81 good enough to ship? Compare to baseline (old search = 0.74). That's a 9.5% relative improvement — probably worth shipping.
 
 ---
 
@@ -803,8 +793,6 @@ MRR = (1/3 + 1/1 + 1/2) / 3 = (0.333 + 1.0 + 0.5) / 3 = 1.833/3 = 0.611
 An MRR of 0.61 means on average users find a relevant result at approximately position 1.6 — not bad, but there's room to improve query 1.
 
 ---
-
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -1106,7 +1094,6 @@ Forces structured output that downstream code can parse reliably.
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -1142,7 +1129,7 @@ Final vocabulary: ["c","a","t","s","ca","cat","cats","the","..."]
 
 Common words get one token. Rare or made-up words get split into subwords.
 
-**Why it matters for PMs:**
+**Why it matters:**
 
 1 token ≈ 4 characters ≈ 0.75 words. A 1,000-word document ≈ 1,333 tokens.
 
@@ -1203,7 +1190,7 @@ Top-p = 0.9:
   Only sample from these 6 words. Ignore everything else.
 ```
 
-**PM decision:** Customer support bot → temperature = 0 (consistent, factual). Creative writing tool → temperature = 0.8–1.0 (varied, surprising).
+**Decision:** Customer support bot → temperature = 0 (consistent, factual). Creative writing tool → temperature = 0.8–1.0 (varied, surprising).
 
 ---
 
@@ -1282,7 +1269,6 @@ Nobody fully understands why this happens. It's one of the most active research 
 
 ---
 
-<p align="right"><strong>AI PM INSIDER</strong></p>
 
 ---
 
@@ -1385,4 +1371,3 @@ Nobody fully understands why this happens. It's one of the most active research 
 
 ---
 
-*Everything in this supplement has a worked example. Everything in the main guide has the architecture. Together they cover the complete NLP curriculum for AI/ML PMs.*
