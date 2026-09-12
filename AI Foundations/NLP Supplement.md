@@ -1,4 +1,3 @@
----
 # NLP — Deep Dive Supplement
 
 ### Everything that needs a simple example, worked through step by step
@@ -1370,4 +1369,3 @@ Nobody fully understands why this happens. It's one of the most active research 
 | Emergent ability | A capability that appears suddenly at scale, not gradually |
 
 ---
-

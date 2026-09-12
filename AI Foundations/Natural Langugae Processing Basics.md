@@ -9,11 +9,6 @@
 
 This guide moves from **simple → complex**, exactly the way an interviewer will probe you. Start with what NLP is, then how words become numbers, then the models that reason about those numbers, then the architectures, then the cutting-edge stuff.
 
-**Every concept has:**
-- A plain-English explanation
-- A concrete example
-- Where it's used in real products
-
 ---
 
 ---
@@ -1167,4 +1162,3 @@ BERT is bidirectional — it reads the whole sentence at once, which is perfect 
 Pre-training on text makes a model good at predicting next words — but not necessarily helpful or safe. RLHF aligns the model to human preferences: (1) fine-tune on human-written examples, (2) train a reward model on human rankings of outputs, (3) use RL to maximise the reward model score. This transformed GPT-3 (impressive but erratic) into ChatGPT (helpful, safe, instruction-following).
 
 ---
-
